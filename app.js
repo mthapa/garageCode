@@ -2,7 +2,7 @@ var express = require('express'),
 	path = require('path'),
 	config = require('./config'),
 	async = require('async'),
-	gpio = require('pi-gpio'),
+	gpio = require('./pi-gpio'),
 	app = express();
 
 app.set('port', process.env.PORT || 3000);
