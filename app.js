@@ -4,10 +4,36 @@ var express = require('express'),
 	async = require('async'),
 	gpio = require('./pi-gpio'),
 	app = express();
+	//passport = require('passport');
+	//Strategy = require('passport-facebook').Strategy;
 
 app.set('port', process.env.PORT || 3000);
 
-app.use('/', express.static(__dirname + '/public'));
+
+// Madan's Code
+
+// Configure view engine to render EJS templates.
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+// Define routes.
+app.get('/',
+  function(req, res) {
+    res.render('home');
+  });
+
+app.get('/login',
+  function(req, res) {
+    res.render('login');
+  });
+
+app.get('/dashboard',
+  function(req, res) {
+    res.render('dashboard');
+  });
+
+
+//app.use('/', express.static(__dirname + '/public'));
 
 function delayPinWrite(pin, value, callback) {
 	setTimeout(function() {
@@ -107,4 +133,6 @@ app.post("/api/garage/both", function(req, res) {
 	]);
 });
 
-app.listen(app.get('port'));
+app.listen(app.get('port'), function(){
+	console.log("Server listening on port 3000...");
+});
