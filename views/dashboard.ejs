@@ -29,6 +29,18 @@
 	</style>
 </head>
 <body>
+   <p>
+   <p>
+        ID: <%= user.id %><br/>        
+        Name: <%= user.displayName %><br/>
+        <% if (user.emails) { %>
+        Email: <%= user.emails[0].value %><br/>
+        <% } %>
+        <a href="/logout">Sign Out</a>
+        </p>
+   </p>
+
+
 	<button onclick="openLeft()">Left Garage</button>
 	<button onclick="openRight()">Right Garage</button>
 	<button onclick="openBoth()">Both Garages</button>
