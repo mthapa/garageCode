@@ -1,4 +1,6 @@
 # Garage-node
+# Garage-node
+# Garage-node
 
 This is the node.js app that is controlling my garage door openers via Raspberry Pi. To get the full details on my project check out my [post](http://itsbrent.net/2013/03/hacking-my-garage-with-a-raspberry-pi/) on my [blog](http://itsbrent.net).
 
